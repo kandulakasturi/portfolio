@@ -1,0 +1,536 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050816;
+    color: white;
+}
+
+
+/* Navigation */
+
+nav {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    position: fixed;
+    width: 100%;
+
+    background: rgba(5, 8, 22, 0.8);
+
+    backdrop-filter: blur(15px);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo::first-letter {
+    color: #00eaff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00eaff;
+}
+
+
+/* Home */
+
+.home {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 100px 10%;
+
+    gap: 50px;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.small-text {
+    color: #00eaff;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+h1 span {
+    color: #00eaff;
+}
+
+.home-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    color: #b8c0d9;
+    line-height: 1.7;
+}
+
+
+/* Buttons */
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 13px 25px;
+
+    background: #00eaff;
+
+    color: #001018;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 20px #00eaff;
+}
+
+.btn.second {
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid #00eaff;
+}
+
+
+/* 3D Photo */
+
+.photo-container {
+    perspective: 1000px;
+}
+
+.photo-card {
+    width: 330px;
+    height: 430px;
+    position: relative;
+    transform-style: preserve-3d;
+
+    /* 5% border around the image */
+    padding: 8px;
+
+    /* Suitable dark professional border */
+    background: #080d1c;
+
+    border: 1px solid rgba(0, 234, 255, 0.35);
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(0, 234, 255, 0.2);
+
+    transition: transform 0.2s;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    /* Photo fills the inside area */
+    object-fit: cover;
+    object-position: center top;
+
+    /* Rounded photo */
+    border-radius: 18px;
+}
+
+/* Glow */
+
+.glow {
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    background: #00eaff;
+
+    filter: blur(100px);
+
+    opacity: 0.3;
+
+    z-index: -1;
+}
+
+
+/* Floating cards */
+
+.floating-card {
+    position: absolute;
+
+    padding: 12px 18px;
+
+    background: rgba(20, 25, 50, 0.85);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 12px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    animation: float 3s infinite ease-in-out;
+}
+
+.card-one {
+    top: 40px;
+    left: -70px;
+}
+
+.card-two {
+    bottom: 100px;
+    right: -80px;
+}
+
+.card-three {
+    bottom: 30px;
+    left: -60px;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Sections */
+
+section {
+    padding: 100px 10%;
+}
+
+.section-title {
+    text-align: center;
+
+    font-size: 40px;
+
+    margin-bottom: 50px;
+
+    color: #00eaff;
+}
+
+
+/* About */
+
+.about-box {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 20px;
+
+    line-height: 1.8;
+
+    color: #c4c9da;
+}
+
+.about-box p {
+    margin-bottom: 20px;
+}
+
+
+/* Skills */
+
+.skills-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.skill {
+    padding: 15px 25px;
+
+    border: 1px solid #00eaff;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.skill:hover {
+    background: #00eaff;
+
+    color: #001018;
+
+    transform: translateY(-5px);
+}
+
+
+/* Projects */
+
+.project-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+}
+
+.project-card {
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 20px;
+
+    transition: 0.4s;
+}
+
+.project-card:hover {
+    transform:
+        translateY(-10px)
+        rotateX(3deg)
+        rotateY(-3deg);
+
+    border-color: #00eaff;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+
+    color: #00eaff;
+}
+
+.project-card p {
+    color: #b8c0d9;
+
+    line-height: 1.6;
+}
+
+
+/* Project Bullet Points */
+
+.project-card ul {
+    margin-top: 15px;
+
+    padding-left: 20px;
+
+    color: #b8c0d9;
+
+    line-height: 1.8;
+}
+
+.project-card li {
+    margin-bottom: 5px;
+}
+
+
+/* Technologies */
+
+.tech {
+    margin-top: 20px;
+
+    color: #00eaff;
+}
+
+
+.education-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.education-card {
+    padding: 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    transition: 0.3s;
+}
+
+.education-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #00eaff;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.education-card h3 {
+    color: #00eaff;
+
+    margin-bottom: 15px;
+}
+
+.education-card p {
+    margin: 8px;
+
+    color: #b8c0d9;
+}
+
+.education-card h4 {
+    margin-top: 20px;
+
+    font-size: 22px;
+}
+
+
+/* Contact */
+
+.contact-box {
+    text-align: center;
+}
+
+.contact-box p {
+    color: #b8c0d9;
+
+    margin-bottom: 25px;
+}
+
+.contact-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.contact-links a {
+    color: #00eaff;
+
+    text-decoration: none;
+
+    border: 1px solid #00eaff;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #777;
+}
+
+
+/* Mobile */
+
+@media(max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .home {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 130px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .photo-card {
+        width: 280px;
+        height: 370px;
+    }
+
+    .floating-card {
+        display: none;
+    }
+
+}
